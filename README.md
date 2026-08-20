@@ -51,106 +51,97 @@ bricks/
 
 ---
 
-## 🚀 วิธีการติดตั้งและเริ่มใช้งาน
+## 🚀 วิธีการติดตั้งและเริ่มใช้งาน (Installation)
 
-### 1. ติดตั้ง Mason CLI (หากยังไม่ได้ติดตั้ง)
+### 1. ติดตั้ง Mason CLI (ทำครั้งเดียวในเครื่อง)
 ```bash
 dart pub global activate mason_cli
 ```
 
 ---
 
-### 2. ติดตั้ง Bricks เพื่อใช้งานแบบ Global 🌍 (แนะนำ)
-รันคำสั่งด้านล่างนี้ในโฟลเดอร์ `mason-bricks` เพื่อติดตั้ง Bricks เข้าสู่ Global ของเครื่อง ทำให้สามารถเรียกใช้คำสั่ง `mason make ...` ได้จากทุกที่:
+### 2. ติดตั้ง Bricks เข้าสู่ Global ผ่าน GitHub 🌐 (ไม่ต้อง Clone โปรเจกต์)
 
-#### 🔵 ติดตั้ง GetX Bricks (Global):
+ผู้ใช้งานสามารถติดตั้ง Bricks เข้าเครื่องผ่าน GitHub URL ได้โดยตรง:
+
+#### ⚡ ติดตั้งทั้งหมดในคำสั่งเดียว (One-liner - แนะนำ):
 ```bash
-mason add -g getx_init --path ./bricks/getx/init
-mason add -g getx_feature --path ./bricks/getx/feature
-mason add -g getx_page --path ./bricks/getx/page
-```
-
-#### 🟣 ติดตั้ง Riverpod Bricks (Global):
-```bash
-mason add -g riverpod_init --path ./bricks/riverpod/init
-mason add -g riverpod_feature --path ./bricks/riverpod/feature
-mason add -g riverpod_page --path ./bricks/riverpod/page
-```
-
-#### 🔴 ติดตั้ง BLoC Bricks (Global):
-```bash
-mason add -g bloc_init --path ./bricks/bloc/init
-mason add -g bloc_feature --path ./bricks/bloc/feature
-mason add -g bloc_page --path ./bricks/bloc/page
-```
-
-> **💡 ติดตั้งทั้งหมดในคำสั่งเดียว (One-liner):**
-> ```bash
-> mason add -g getx_init --path ./bricks/getx/init && mason add -g getx_feature --path ./bricks/getx/feature && mason add -g getx_page --path ./bricks/getx/page && mason add -g riverpod_init --path ./bricks/riverpod/init && mason add -g riverpod_feature --path ./bricks/riverpod/feature && mason add -g riverpod_page --path ./bricks/riverpod/page && mason add -g bloc_init --path ./bricks/bloc/init && mason add -g bloc_feature --path ./bricks/bloc/feature && mason add -g bloc_page --path ./bricks/bloc/page
-> ```
-
-#### 📋 ตรวจสอบรายการ Bricks ที่ติดตั้งใน Global:
-```bash
-mason list -g
-```
-
-#### 🧹 ลบ / ล้าง Bricks ออกจาก Global:
-```bash
-# ลบเฉพาะ Framework ที่ต้องการ (เช่น GetX)
-mason remove -g getx_init getx_feature getx_page
-
-# ลบเฉพาะ Riverpod
-mason remove -g riverpod_init riverpod_feature riverpod_page
-
-# ลบเฉพาะ BLoC
-mason remove -g bloc_init bloc_feature bloc_page
-
-# หรือ ลบ Bricks ทั้งหมดออกจาก Global ในคำสั่งเดียว
-mason remove -g getx_init getx_feature getx_page riverpod_init riverpod_feature riverpod_page bloc_init bloc_feature bloc_page
-
-# หรือ ล้าง Cache ทั้งหมดของ Mason
-mason cache clear
+mason add -g getx_init --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/getx/init && mason add -g getx_feature --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/getx/feature && mason add -g getx_page --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/getx/page && mason add -g riverpod_init --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/riverpod/init && mason add -g riverpod_feature --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/riverpod/feature && mason add -g riverpod_page --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/riverpod/page && mason add -g bloc_init --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/bloc/init && mason add -g bloc_feature --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/bloc/feature && mason add -g bloc_page --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/bloc/page
 ```
 
 ---
 
+#### 🔹 หรือเลือกติดตั้งแยกตาม Framework:
 
----
-
-### 🌐 ติดตั้งแบบ Global ผ่าน GitHub โดยตรง (ไม่ต้อง Clone) 🚀
-ผู้ใช้งานสามารถติดตั้ง Bricks เข้าเครื่องผ่าน GitHub URL ได้ทันที:
-
+##### 🔵 สำหรับ Flutter GetX:
 ```bash
-# 🔵 GetX Bricks (จาก GitHub)
 mason add -g getx_init --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/getx/init
 mason add -g getx_feature --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/getx/feature
 mason add -g getx_page --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/getx/page
+```
 
-# 🟣 Riverpod Bricks (จาก GitHub)
+##### 🟣 สำหรับ Flutter Riverpod:
+```bash
 mason add -g riverpod_init --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/riverpod/init
 mason add -g riverpod_feature --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/riverpod/feature
 mason add -g riverpod_page --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/riverpod/page
+```
 
-# 🔴 BLoC Bricks (จาก GitHub)
+##### 🔴 สำหรับ Flutter BLoC:
+```bash
 mason add -g bloc_init --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/bloc/init
 mason add -g bloc_feature --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/bloc/feature
 mason add -g bloc_page --git-url https://github.com/Singhanat-Dev/flutter-clean-architecture-bricks.git --git-path bricks/bloc/page
 ```
 
-### 3. หรือ ติดตั้งแบบ Local (เฉพาะโฟลเดอร์นี้)
+---
+
+### 3. กรณี Clone หรือติดตั้งจาก Local Path
 ```bash
+# ติดตั้งแบบ Global จากโฟลเดอร์ภายในเครื่อง
+mason add -g getx_init --path ./bricks/getx/init
+mason add -g riverpod_init --path ./bricks/riverpod/init
+mason add -g bloc_init --path ./bricks/bloc/init
+
+# หรือติดตั้งแบบ Local ในโฟลเดอร์นี้
 mason get
 ```
 
 ---
 
-## 🛠️ ตัวอย่างการใช้งานคำสั่ง
+### 📋 ตรวจสอบ / อัปเดต / ล้าง Bricks ในเครื่อง
+
+#### ตรวจสอบรายการ Bricks ใน Global:
+```bash
+mason list -g
+```
+
+#### อัปเดต Bricks ให้เป็นเวอร์ชันล่าสุดจาก GitHub:
+```bash
+mason upgrade -g
+```
+
+#### ลบ / ล้าง Bricks ออกจาก Global:
+```bash
+# ลบทั้งหมดในคำสั่งเดียว
+mason remove -g getx_init getx_feature getx_page riverpod_init riverpod_feature riverpod_page bloc_init bloc_feature bloc_page
+
+# หรือล้าง Cache ทั้งหมดของ Mason
+mason cache clear
+```
+
+---
+
+## 🛠️ ตัวอย่างการใช้งานในโปรเจกต์ใหม่ (Usage Workflow)
 
 ### 🔴 สำหรับ Flutter BLoC
 
-#### 1. Initializing โปรเจกต์ BLoC (`bloc_init`)
-*(ระบบจะสร้างไฟล์โครงสร้าง + รัน `flutter pub add` ติดตั้ง dependencies ทั้งหมดให้อัตโนมัติ)*
+#### 1. สร้างโปรเจกต์ & เริ่มต้นโครงสร้าง BLoC (`bloc_init`)
 ```bash
+flutter create my_app
+cd my_app
+
+# สร้างโครงสร้าง Clean Architecture + ติดตั้ง Dependencies ใน pubspec.yaml อัตโนมัติ
 mason make bloc_init
 ```
 **Variables:**
@@ -169,6 +160,7 @@ mason make bloc_init
 - `crypto: ^3.0.6`
 
 #### 2. สร้าง Feature ใหม่ BLoC (`bloc_feature`)
+*(สร้าง Data + Domain + Presentation + Auto GoRoute & DI Registration)*
 ```bash
 mason make bloc_feature --feature_name auth --page_name login
 ```
@@ -182,9 +174,12 @@ mason make bloc_page --feature_name auth --page_name register
 
 ### 🟣 สำหรับ Flutter Riverpod
 
-#### 1. Initializing โปรเจกต์ Riverpod (`riverpod_init`)
-*(ระบบจะสร้างไฟล์โครงสร้าง + รัน `flutter pub add` ติดตั้ง dependencies ทั้งหมดให้อัตโนมัติ)*
+#### 1. สร้างโปรเจกต์ & เริ่มต้นโครงสร้าง Riverpod (`riverpod_init`)
 ```bash
+flutter create my_app
+cd my_app
+
+# สร้างโครงสร้าง Clean Architecture + ติดตั้ง Dependencies ใน pubspec.yaml อัตโนมัติ
 mason make riverpod_init
 ```
 **Variables:**
@@ -201,6 +196,7 @@ mason make riverpod_init
 - `crypto: ^3.0.6`
 
 #### 2. สร้าง Feature ใหม่ Riverpod (`riverpod_feature`)
+*(สร้าง Data + Domain + Presentation/Providers + Auto GoRoute)*
 ```bash
 mason make riverpod_feature --feature_name auth --page_name login
 ```
@@ -214,9 +210,12 @@ mason make riverpod_page --feature_name auth --page_name register
 
 ### 🔵 สำหรับ Flutter GetX
 
-#### 1. Initializing โปรเจกต์ GetX (`getx_init`)
-*(ระบบจะสร้างไฟล์โครงสร้าง + รัน `flutter pub add` ติดตั้ง dependencies ทั้งหมดให้อัตโนมัติ)*
+#### 1. สร้างโปรเจกต์ & เริ่มต้นโครงสร้าง GetX (`getx_init`)
 ```bash
+flutter create my_app
+cd my_app
+
+# สร้างโครงสร้าง Clean Architecture + ติดตั้ง Dependencies ใน pubspec.yaml อัตโนมัติ
 mason make getx_init
 ```
 **Variables:**
@@ -231,6 +230,7 @@ mason make getx_init
 - `crypto: ^3.0.6`
 
 #### 2. สร้าง Feature ใหม่ GetX (`getx_feature`)
+*(สร้าง Data + Domain + Presentation + Auto Route)*
 ```bash
 mason make getx_feature --feature_name auth --page_name login
 ```
