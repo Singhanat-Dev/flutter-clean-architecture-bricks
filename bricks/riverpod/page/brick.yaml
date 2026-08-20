@@ -1,0 +1,15 @@
+name: riverpod_page
+description: Flutter Riverpod Clean Architecture page brick (adds a page to an existing feature)
+version: 0.1.0+1
+environment:
+  mason: ">=0.1.0-dev.26 <0.2.0"
+
+vars:
+  feature_name:
+    type: string
+    description: The name of the feature to add this page to (e.g. auth, profile, product)
+    prompt: What is the target feature name?
+  page_name:
+    type: string
+    description: The name of the new page (e.g. register, detail, edit)
+    prompt: What is the page name?
