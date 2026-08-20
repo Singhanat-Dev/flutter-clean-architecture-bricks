@@ -1,0 +1,17 @@
+name: bloc_init
+description: Flutter BLoC Clean Architecture initialization brick
+version: 0.1.0+1
+environment:
+  mason: ">=0.1.0-dev.26 <0.2.0"
+
+vars:
+  project_name:
+    type: string
+    description: The name of the project (e.g. my_app)
+    default: my_app
+    prompt: What is the project name?
+  application_title:
+    type: string
+    description: The title displayed for the application
+    default: Flutter BLoC App
+    prompt: What is the title of the app?
