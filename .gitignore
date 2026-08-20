@@ -1,0 +1,12 @@
+# Mason
+.mason/
+mason-lock.json
+
+# Dart / Flutter
+.dart_tool/
+.packages
+pubspec.lock
+build/
+
+# macOS
+.DS_Store

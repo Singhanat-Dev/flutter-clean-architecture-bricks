@@ -1,0 +1,24 @@
+bricks:
+  # Flutter GetX Clean Architecture Bricks
+  getx_init:
+    path: bricks/getx/init
+  getx_feature:
+    path: bricks/getx/feature
+  getx_page:
+    path: bricks/getx/page
+
+  # Flutter Riverpod Clean Architecture Bricks
+  riverpod_init:
+    path: bricks/riverpod/init
+  riverpod_feature:
+    path: bricks/riverpod/feature
+  riverpod_page:
+    path: bricks/riverpod/page
+
+  # Flutter BLoC Clean Architecture Bricks
+  bloc_init:
+    path: bricks/bloc/init
+  bloc_feature:
+    path: bricks/bloc/feature
+  bloc_page:
+    path: bricks/bloc/page
